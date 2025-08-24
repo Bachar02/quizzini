@@ -1,4 +1,3 @@
-```markdown
 # 📄 PDF Quizzer  
 **Turn any PDF into an interactive quiz in seconds.**
 
