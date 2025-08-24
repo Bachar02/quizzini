@@ -14,7 +14,6 @@ Navigate to the **Local URL** and you’re ready to quiz.
 
 ---
 
-
 ## How it works
 1. Drop **any PDF** into `documents/`.  
 2. Choose how many questions you want.  
@@ -41,20 +40,17 @@ GEMINI_API_KEY=your_gemini_key
 ```
 
 ---
-
 ## CLI alternative
 ```bash
 python src/quiz.py documents/ -n 10
 ```
-
 ---
 
 ## Contributions
 Pull-requests welcome. Open an issue for bugs or ideas.
 
-
 ## Demo
 Watch the 58-second clip below to see the flow: 
-https://github.com/user-attachments/assets/bd9f147a-91e0-4a22-a43a-8d1f6a7e618c
 
+https://github.com/user-attachments/assets/bd9f147a-91e0-4a22-a43a-8d1f6a7e618c
 
