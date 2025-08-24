@@ -55,7 +55,7 @@ Pull-requests welcome. Open an issue for bugs or ideas.
 
 ## 📸 Demo
 Watch the 58-second clip below to see the flow:  
-[Demo GIF / Video link](https://github.com/<you>/pdf-quizzer/blob/main/demo.gif)
+[(https://github.com/<you>/pdf-quizzer/blob/main/demo.gif)](https://github.com/user-attachments/assets/77d1eac1-306b-4e38-9195-8a64cab601d9)
 
 ---
 
