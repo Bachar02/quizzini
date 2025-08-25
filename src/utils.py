@@ -28,7 +28,8 @@ embeddings = GoogleGenerativeAIEmbeddings(
 
 
 )
-INDEX_NAME = "llmvectordb"
+
+INDEX_NAME = "llmvectordb" # name it into piencone after signing in and creating an index
 
 
 def load_and_split_pdfs(pdf_dir: str, chunk_size: int = 800, chunk_overlap: int = 50) -> List[Document]:
