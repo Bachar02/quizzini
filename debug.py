@@ -29,4 +29,4 @@ try:
     print("----- RAW GEMINI RESPONSE -----")
     print(json.dumps(raw, ensure_ascii=False, indent=2))
 except Exception as e:
-    print("❌ LLM error:", e)
+    print("LLM error:", e)

@@ -64,19 +64,17 @@ def generate_questions(
 
     questions = []
     for i in range(0, num_questions, questions_per_call):
-        ctx_docs = all_chunks[i*2 : (i+1)*2]   # small window so text is never empty
+        ctx_docs = all_chunks[i*2 : (i+1)*2]   
         context = "\n\n".join([c.page_content for c in ctx_docs])
         try:
                 raw = chain.invoke({"context": context,
                                     "k": min(questions_per_call, num_questions - len(questions))})
 
-                # Accept dict or list
                 if isinstance(raw, dict):
                     raw = [raw]
                 if not isinstance(raw, list):
                     continue
 
-                # Keep only objects that have the 3 required keys
                 for item in raw:
                     if all(k in item for k in ("question", "options", "answer")):
                         questions.append(item)
@@ -86,9 +84,7 @@ def generate_questions(
     return questions
 
 
-# --------------------------------------------------
-# CLI entry-point (optional)
-# --------------------------------------------------
+# CLI
 def run_quiz_cli(questions: List[Dict]) -> None:
     score = 0
     for idx, q in enumerate(questions, 1):

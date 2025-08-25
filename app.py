@@ -19,10 +19,6 @@ if st.button("Generate Quiz"):
     st.session_state["score"] = 0
     st.session_state["idx"] = 0
 
-if "questions" not in st.session_state or not st.session_state.questions:
-    st.error("❌ No valid questions could be generated. Try fewer questions or check your PDF.")
-    st.stop()
-
 total = len(st.session_state.questions)
 q = st.session_state.questions[st.session_state.idx]
 st.subheader(f"Q{st.session_state.idx+1}) {q['question']}")

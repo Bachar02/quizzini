@@ -11,17 +11,14 @@ import pinecone
 
 load_dotenv()
 
-# ------------------------------------------------------------------
-# Environment sanity checks
-# ------------------------------------------------------------------
+# setting up env
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 if not PINECONE_API_KEY or not GEMINI_API_KEY:
     raise ValueError("Missing PINECONE_API_KEY or GEMINI_API_KEY in .env")
 
 # ------------------------------------------------------------------
-# Re-usable instances / helpers
-# ------------------------------------------------------------------
+
 pc = pinecone.Pinecone(api_key=PINECONE_API_KEY)
 embeddings = GoogleGenerativeAIEmbeddings(
     model="models/embedding-001",
@@ -55,7 +52,6 @@ def get_or_create_vectorstore(chunks: List[Document]) -> PineconeVectorStore:
             metric="cosine",
             spec=pinecone.ServerlessSpec(cloud="aws", region="us-west-2")
         )
-        # Wait until ready
         while not pc.describe_index(INDEX_NAME).status['ready']:
             import time
             time.sleep(2)
