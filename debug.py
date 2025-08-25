@@ -1,3 +1,5 @@
+# debug file to test the connection with gemini llm and the prompt 
+
 import os, json
 from src.utils import load_and_split_pdfs, get_or_create_vectorstore
 from src.quiz import PROMPT   # use the same prompt
